@@ -280,7 +280,6 @@
         <div class="right_col" role="main">
             <div class="">
                 {% block body %}
-                {% endblock %}
                 <div class="page-title">
                     <div class="title_left">
                         <h3>Form Elements</h3>
@@ -1310,6 +1309,8 @@
                         </form>
                     </div>
                 </div>
+
+                {% endblock %}
             </div>
         </div>
         <!-- /page content -->
@@ -1359,7 +1360,7 @@
 <!-- starrr -->
 <script src="{{ asset('/template/vendors/starrr/dist/starrr.js') }}"></script>
 <!-- Custom Theme Scripts -->
-<script src="{{ asset('/template/build/js/custom.min.js') }}"></script>
+<script src="{{ asset('/template/build/js/custom.js') }}"></script>
 {% block javascripts %}
 
 {% endblock %}

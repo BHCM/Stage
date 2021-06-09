@@ -1,0 +1,14 @@
+<div class="btn-group">
+    <button type="button" class="btn btn-round btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-cog"></i>
+    </button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="{{ path('user_show',{'id': user.id}) }}"><i class="fa fa-eye"></i> Affiché</a>
+        <a class="dropdown-item" href="{{ path('user_edit',{'id': user.id}) }}"><i class="fa fa-edit"></i> Modifier</a>
+        <form id="user_delete_{{ user.id }}" method="post" action="{{ path('user_delete', {'id': user.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer l\'utilisateur #{{ user.id }}  {{ user.firstName }} ?');">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+            <a class="dropdown-item" href="javascript:$('#user_delete_{{ user.id }}').submit();"><i class="fa fa-trash"></i> Supprimer</a>
+        </form>
+    </div>
+</div>
