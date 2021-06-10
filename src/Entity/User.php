@@ -2,13 +2,19 @@
 
 namespace App\Entity;
 
+use DateTimeImmutable;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * User
  *
  * @ORM\Table(name="user")
  * @ORM\Entity
+ * @Vich\Uploadable
  */
 class User
 {
@@ -43,7 +49,22 @@ class User
     private $password;
 
     /**
-     * @var string
+     *
+     * @Vich\UploadableField(mapping="user_image", fileNameProperty="image")
+     *
+     * @var File|null
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     * @var DateTimeInterface|null
+     */
+    private $updatedAt;
+
+    /**
+     * @var string|null
      *
      * @ORM\Column(name="image", type="string", length=256, nullable=false)
      */
@@ -95,11 +116,41 @@ class User
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(string $image = null): self
     {
         $this->image = $image;
 
         return $this;
+    }
+
+    public function getUpdatedAt(): ?DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     *
+     * @param File|UploadedFile|null $imageFile
+     */
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+            $this->updatedAt = new DateTimeImmutable();
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 
 }

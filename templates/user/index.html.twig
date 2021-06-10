@@ -27,10 +27,10 @@
                                     <thead>
                                     <tr>
                                         <th>ID </th>
+                                        <th>Image </th>
                                         <th>Prénom  </th>
                                         <th>Nom  </th>
                                         <th>Mot de passe </th>
-                                        <th>Image </th>
                                         <th>Actions </th>
                                     </tr>
                                     </thead>
@@ -38,10 +38,14 @@
                                     {% for user in users %}
                                         <tr>
                                             <td>{{ user.id }}</td>
+                                            <td>
+                                                {% if vich_uploader_asset(user) is not null %}
+                                                    <img src="{{ vich_uploader_asset(user) | imagine_filter('user_list_thumb') }}" alt="{{ vich_uploader_asset(user) }}">
+                                                {% endif %}
+                                            </td>
                                             <td>{{ user.firstName }}</td>
                                             <td>{{ user.lastName }}</td>
                                             <td>{{ user.password }}</td>
-                                            <td>{{ user.image }}</td>
                                             <td>
                                                 {{ include('user/_action.html.twig') }}
                                             </td>

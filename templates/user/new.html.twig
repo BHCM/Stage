@@ -20,7 +20,7 @@
                 <div class="x_content">
                     <br />
 
-                    {{ include('user/_form.html.twig') }}
+                    {{ include('user/_form.html.twig', {'form_path': path(form_path)}) }}
                 </div>
             </div>
         </div>

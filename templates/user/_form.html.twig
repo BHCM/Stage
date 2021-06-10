@@ -1,4 +1,4 @@
-{{ form_start(form,  {'action': path('user_new'), 'attr': {'class': 'form-horizontal form-label-left','role': 'form', 'id': 'user_new', 'dataformid': 'user_new'}}) }}
+{{ form_start(form,  {'action': form_path, 'attr': {'class': 'form-horizontal form-label-left','role': 'form', 'id': 'user_new', 'dataformid': 'user_new'}}) }}
 <div class="item form-group">
     {{ form_label(form.firstName, null,  { 'label_attr': {'class': 'col-form-label col-md-3 col-sm-3 label-align'} }) }}
     <div class="col-md-6 col-sm-6 ">
@@ -18,9 +18,9 @@
     </div>
 </div>
 <div class="item form-group">
-    {{ form_label(form.image, null,  { 'label_attr': {'class': 'col-form-label col-md-3 col-sm-3 label-align'} }) }}
+    {{ form_label(form.imageFile, null,  { 'label_attr': {'class': 'col-form-label col-md-3 col-sm-3 label-align'} }) }}
     <div class="col-md-6 col-sm-6 ">
-        {{ form_widget(form.image, { 'attr': {'class': 'form-control'} }) }}
+        {{ form_widget(form.imageFile, { 'attr': {'class': 'form-control'} }) }}
     </div>
 </div>
 
