@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New User{% endblock %}
+{% block title %}Nouvel Utilisateur{% endblock %}
 
 {% block body %}
     <div class="page-title">
@@ -20,7 +20,7 @@
                 <div class="x_content">
                     <br />
 
-                    {{ include('user/_form.html.twig', {'form_path': path(form_path)}) }}
+                    {{ include('user/_form.html.twig', {'form_path': path(form_path),'button_label': 'Enregistrer'}) }}
                 </div>
             </div>
         </div>

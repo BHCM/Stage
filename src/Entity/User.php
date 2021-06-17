@@ -5,6 +5,7 @@ namespace App\Entity;
 use DateTimeImmutable;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Type;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -44,7 +45,7 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=256, nullable=false)
+     * @ORM\Column(name="password", type="string",  length=256, nullable=false)
      */
     private $password;
 
