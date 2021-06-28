@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DefaultController!{% endblock %}
+{% block title %}Accueil!{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,13 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Bienvenue sur mon projet !</h1>
 
-    This friendly message is coming from:
+    Ce projet a été créer lors de mon stage en 2021.
+    Le projet a pour but de gérer des utilisateurs
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/stage/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/stage/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
+        <li>Vous pouvez accéder à la liste des utilisateurs : <code><a href="{{ path('user_index') }}" >Liste</a></code></li>
     </ul>
+
 </div>
 {% endblock %}
