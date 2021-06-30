@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
 <style>
@@ -11,10 +11,12 @@
 <div class="example-wrapper">
     <h1>Bienvenue sur mon projet !</h1>
 
-    Ce projet a été créer lors de mon stage en 2021.
-    Le projet a pour but de gérer des utilisateurs
+    Cet outil a été crée lors de mon stage en 2021. Il a pour but de gérer des utilisateurs :
+
+
     <ul>
-        <li>Vous pouvez accéder à la liste des utilisateurs : <code><a href="{{ path('user_index') }}" >Liste</a></code></li>
+        <li>Pour accéder a la liste des utilisateur : Menu Utilisateur -> <code><a href="{{ path('user_index') }}" > Liste </a></code></li>
+        <li>Pour créer des utilisateur : Créer un utilisateur -> <code><a href="{{ path('user_new') }}" > Créer </a></code> </li>
     </ul>
 
 </div>
