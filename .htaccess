@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Accès réservés"
+AuthUserFile C:\xampp\htdocs\stage\.htpasswd
+AuthPGAuthoritative Off
+require user hicham
