@@ -14,12 +14,12 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName',null,['label'=>'Prenom'])
-            ->add('lastName',null,['label'=>'Nom'])
-            ->add('password',PasswordType::class,['label'=>'Mot de Passe'])
+            ->add('firstName', null, ['label' => 'Prenom'])
+            ->add('lastName', null, ['label' => 'Nom'])
+            ->add('password', PasswordType::class, ['label' => 'Mot de Passe'])
             ->add('imageFile', VichImageType::class, [
-                'label'=>'Image',
-                'required' => true,
+                'label' => 'Image',
+                'required' => $options['mode'] === 'new',
                 'allow_delete' => false,
                 'download_uri' => false,
                 'image_uri' => true,
@@ -32,6 +32,7 @@ class UserType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'mode' => 'edit',
         ]);
     }
 
